@@ -69,7 +69,7 @@ Each experiment documents total transaction costs across multiple trading days t
 |-------------|----------------------|-----------|-----------|-----------------|
 | DQN         | [-]               | [0.0023]    | [0.00029]    | + / - TWAP/VWAP |
 | Custom DQN  | [0.034]               | [0.0023]    | [0.00029]    | + TWAP/VWAP |
-| PPO         | [0.06]               | [0.0023]    | [0.00029]    | +  TWAP/VWAP |
+| PPO         | [0.003]               | [0.0023]    | [0.00029]    | ~  TWAP/VWAP |
 
 Each model's performance is summarized, highlighting improvements or areas where they fall short relative to benchmarks.
 ### Key Insights:
