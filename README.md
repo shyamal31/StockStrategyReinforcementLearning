@@ -86,7 +86,7 @@ Given these considerations, while the RL model may not outperform the benchmarks
 Overall, this result underlines the real-world value of our approach, even if benchmark comparisons appear less favorable under theoretical assumptions.
 
 ## How to use this repo?
-To get started you can check the readme file in [train]([url](https://github.com/shyamal31/StockStrategyReinforcementLearning/blob/main/TRAIN/train.md)) and [deploy]([url](https://github.com/shyamal31/StockStrategyReinforcementLearning/blob/main/DEPLOY/deploy.md)) directories respectively. 
+To get started you can check the readme file in [train](https://github.com/shyamal31/StockStrategyReinforcementLearning/blob/main/TRAIN/train.md) and [deploy](https://github.com/shyamal31/StockStrategyReinforcementLearning/blob/main/DEPLOY/deploy.md) directories respectively. 
 
 ## Future Work
 Future directions for this project include:
