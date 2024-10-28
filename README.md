@@ -72,10 +72,10 @@ Each experiment documents total transaction costs across multiple trading days t
 | PPO         | [0.003]               | [0.0023]    | [0.00029]    | ~  TWAP/ + VWAP |
 
 
-+ increase cost
-~ Almost same cost
++ '+' increase cost
++ '~' Almost same cost
 
-_**Note: Findings suggests that PPO technique is the best among all, probably because the use of continuos space of action. But for the purpose of the demonstration and considering the time constraint for this taks I have deployed DQN model on the cloud. But we can surely replace PPO Algorithm in the deploy directory. **_
+_**Note: Findings suggest that PPO technique is the best among all, probably because the use of continuos space of action. But for the purpose of the demonstration and considering the time constraint for this taks I have deployed DQN model on the cloud. But we can surely replace PPO Algorithm in the deploy directory.**_
 
 Each model's performance is summarized, highlighting improvements or areas where they fall short relative to benchmarks.
 ### Key Insights:
