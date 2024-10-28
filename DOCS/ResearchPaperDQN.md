@@ -2,11 +2,11 @@
 
 # Optimized Trade Execution with DQN
 
-This project implements a DQN-based approach for optimized trade execution, inspired by the research paper "Reinforcement Learning for Optimized Trade Execution." The goal is to minimize transaction costs while executing a target number of shares across a trading day using reinforcement learning. We adapt DQN (Deep Q-Network) to handle the challenges of real-world market data, utilizing a replay buffer and target network for stability.
+A DQN-based approach for optimized trade execution, inspired by the research paper "Reinforcement Learning for Optimized Trade Execution." The goal is to minimize transaction costs while executing a target number of shares across a trading day using reinforcement learning. We adapt DQN (Deep Q-Network) to handle the challenges of real-world market data, utilizing a replay buffer and target network for stability.
 
 ## 1. Algorithm Architecture
 
-### Deep Q-Network (DQN) Model
+### Deep Q-Network (DQN) Model (Paper uses Q-learning table)
 The architecture consists of:
    - **DQN Neural Network**: A 3-layer fully connected neural network with ReLU activations. It takes in the state (`[time, inventory]`) and outputs Q-values for each action, representing the expected cost of executing a trade at a given step.
    - **Replay Buffer**: A memory buffer stores experiences (`state, action, reward, next_state, done`) to avoid correlation in training data. Each training step samples a batch of experiences for efficient learning.
