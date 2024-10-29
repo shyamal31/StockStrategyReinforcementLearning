@@ -35,7 +35,7 @@ To simplify the modeling process, we made the following assumptions:
 2. **Mandatory Sale Completion**: The model must fully execute the sale of 1000 shares by the end of each trading day. This constraint ensures the model’s strategy aligns with end-of-day liquidity requirements.
 3. **Market Order Execution**: Every trade is executed as a market order, with the bid price as the execution price, regardless of quantity. This approach prioritizes immediate execution over limit order considerations, impacting slippage and market impact.
 
-These assumptions influence the model’s strategies and cost minimization goals. They ensure realistic but simplified trading conditions, focusing on optimizing transaction cost rather than more complex factors like order book dynamics or time-weighted sales.
+These assumptions influence the model’s strategies and cost-minimization goals. They ensure realistic but simplified trading conditions, focusing on optimizing transaction cost rather than more complex factors like order book dynamics or time-weighted sales.
 
 ## Methodology
 
@@ -44,9 +44,9 @@ We began by studying relevant research, including papers on trade execution with
 
 ### Algorithm Exploration
 To systematically approach the solution, we implemented and tested multiple RL models:
-1. **Q-Learning with DQN** - Used for its simplicity, DQN was first implemented to validate the setup and understand baseline agent performance.
-2. **Custom DQN Model** - Built a custom DQN model to accommodate specific requirements in our data structure.
-3. **PPO Implementation** - Shifted to the PPO algorithm, exploring its suitability for continuous action spaces and stable learning.
+1. **[Q-Learning with DQN](https://github.com/shyamal31/StockStrategyReinforcementLearning/blob/main/DOCS/ResearchPaperDQN.md)** - Used for its simplicity, DQN was first implemented to validate the setup and understand baseline agent performance.
+2. **[Custom DQN Model](https://github.com/shyamal31/StockStrategyReinforcementLearning/blob/main/DOCS/CustomDQN.md)** - Built a custom DQN model to accommodate specific requirements in our data structure.
+3. **[PPO Implementation](https://github.com/shyamal31/StockStrategyReinforcementLearning/blob/main/DOCS/PPO.md)** - Shifted to the PPO algorithm, exploring its suitability for continuous action spaces and stable learning.
 
 
 For deployment, I used the Custom DQN model. I experimented with the other two models in a Python notebook. 
@@ -67,7 +67,7 @@ Each experiment documents total transaction costs across multiple trading days t
 ## Experimentation & Results
 | Model       | Avg Transaction Cost | TWAP Cost | VWAP Cost | Comparison      |
 |-------------|----------------------|-----------|-----------|-----------------|
-| DQN         | [-]               | [0.0023]    | [0.00029]    | TWAP/VWAP |
+| DQN         | [1.13]               | [0.0023]    | [0.00029]    | + TWAP/ + VWAP |
 | Custom DQN  | [0.034]               | [0.0023]    | [0.00029]    | + TWAP/ + VWAP |
 | PPO         | [0.003]               | [0.0023]    | [0.00029]    | ~  TWAP/ + VWAP |
 
@@ -96,6 +96,7 @@ To get started you can check the readme file in [train](https://github.com/shyam
 
 ## Future Work
 Future directions for this project include:
+- **Futher testing:** - The findings from this task needs further testing to ensure the robustness of the algorithms.
 - **Enhanced Model Architectures** - Explore multi-agent setups, ensemble models, or deep Q-networks with prioritized experience replay.
 - **Advanced Reward Shaping** - Further refine reward signals to encourage more optimal behavior and stable learning.
 - **Real-World Deployment Considerations** - Test scalability and adapt models to real-world trading environments with live data integration.
@@ -105,5 +106,16 @@ Future directions for this project include:
 
 ## Resources Used
 
-
+1. [**Reinforcement Learning in Limit Order Markets**](https://www.cis.upenn.edu/~mkearns/papers/rlexec.pdf) — This is the primary research paper you need to replicate. This will serve as the foundational model for your task, although you will need to adjust the objective to minimize transaction costs rather than maximize wealth.
+2. **AWS SageMaker Documentation**:
+    - [**AWS SageMaker Developer Guide**](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html) — This documentation will help you understand how to deploy your model on SageMaker, including setting up real-time inference endpoints for serving the trade optimization model.
+    - [**SageMaker Real-Time Inference**](https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html) — Detailed guide on deploying machine learning models using real-time inference in SageMaker, which is essential for making your model accessible via an API.
+3. **PPO implementation**
+    - [**Stable Baselines3 SAC Documentation**](https://stable-baselines3.readthedocs.io/en/master/modules/sac.html) — A practical library for implementing SAC in Python, using PyTorch.
+4. **Time-Weighted Average Price (TWAP) and Volume-Weighted Average Price (VWAP)**:
+    - https://chain.link/education-hub/twap-vs-vwap
+5. **Python Libraries for Reinforcement Learning and Trading**:
+    - **Pandas for Financial Data** — Documentation for Pandas, which is essential for handling financial datasets and performing time-series operations on market data.
+6. **Trading Benchmark**:
+   - **https://chain.link/education-hub/twap-vs-vwap**
 ---
